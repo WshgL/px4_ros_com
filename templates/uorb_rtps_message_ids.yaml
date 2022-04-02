@@ -23,16 +23,12 @@ rtps:
     msg: Cpuload
   - id: 12
     msg: DebugArray
-    receive: true
   - id: 13
     msg: DebugKeyValue
-    receive: true
   - id: 14
     msg: DebugValue
-    receive: true
   - id: 15
     msg: DebugVect
-    receive: true
   - id: 16
     msg: DifferentialPressure
   - id: 17
@@ -63,7 +59,6 @@ rtps:
     msg: HomePosition
   - id: 30
     msg: InputRc
-    send: true
   - id: 31
     msg: IridiumsbdStatus
   - id: 32
@@ -95,7 +90,6 @@ rtps:
     receive: true
   - id: 45
     msg: OpticalFlow
-    receive: true
   - id: 46
     msg: ParameterUpdate
   - id: 47
@@ -124,6 +118,7 @@ rtps:
     msg: RateCtrlStatus
   - id: 58
     msg: RcChannels
+    send: true
   - id: 59
     msg: RcParameterMap
   - id: 60
