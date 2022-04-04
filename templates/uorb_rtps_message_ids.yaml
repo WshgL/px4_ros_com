@@ -327,7 +327,6 @@ rtps:
     receive: true
   - id: 162
     msg: ReferenceVirtualRate
-    send: true
   - id: 163
     msg: ReferenceTorque
   - id: 164
@@ -336,9 +335,12 @@ rtps:
     msg: ParamRotation
     send: true
   - id: 166
-    msg: LogRateError
+    msg: LogRotError
     send: true
   - id: 167
+    msg: LogRateError
+    send: true
+  - id: 168
     msg: LogTransError
   - alias: ActuatorControls
     id: 180
