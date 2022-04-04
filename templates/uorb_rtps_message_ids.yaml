@@ -175,7 +175,6 @@ rtps:
     msg: VehicleAirData
   - id: 87
     msg: VehicleAttitude
-    send: true
   - id: 88
     msg: VehicleAttitudeSetpoint
   - id: 89
@@ -229,10 +228,8 @@ rtps:
     msg: WheelEncoders
   - id: 112
     msg: VehicleAngularVelocity
-    send: true
   - id: 113
     msg: VehicleAcceleration
-    send: true
   - id: 115
     msg: AirspeedValidated
   - id: 116
