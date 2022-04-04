@@ -240,7 +240,6 @@ rtps:
     msg: WheelEncoders
   - id: 112
     msg: VehicleAngularVelocity
-    send: true
   - id: 113
     msg: VehicleAcceleration
   - id: 115
