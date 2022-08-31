@@ -130,7 +130,6 @@ rtps:
     msg: EstimatorSensorBias
   - id: 65
     msg: SensorCombined
-    send: true
   - id: 66
     msg: SensorCorrection
   - id: 67
