@@ -444,3 +444,9 @@ rtps:
   - alias: Wind
     id: 213
     msg: EstimatorWind
+  - alias: VehicleAngularVelocity
+    id: 214
+    msg: VehicleAngularVelocityUnfiltered
+  - alias: VehicleAcceleration
+    id: 215
+    msg: VehicleAccelerationUnfiltered
