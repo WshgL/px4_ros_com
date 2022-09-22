@@ -341,6 +341,9 @@ rtps:
     send: true
   - id: 168
     msg: LogTransError
+  - id: 169
+    msg: EscRpmFeedback
+    send: true
   - alias: ActuatorControls
     id: 180
     msg: ActuatorControls0
