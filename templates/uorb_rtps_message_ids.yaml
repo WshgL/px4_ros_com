@@ -334,14 +334,20 @@ rtps:
     msg: ParamRotation
     send: true
   - id: 166
-    msg: LogRotError
-    send: true
+    msg: ParamPropeller
+    receive: true
   - id: 167
-    msg: LogRateError
+    msg: ParamMotor
     send: true
   - id: 168
-    msg: LogTransError
+    msg: LogRotError
+    send: true
   - id: 169
+    msg: LogRateError
+    send: true
+  - id: 170
+    msg: LogTransError
+  - id: 171
     msg: EscRpmFeedback
     send: true
   - alias: ActuatorControls
