@@ -340,14 +340,16 @@ rtps:
     msg: ParamMotor
     send: true
   - id: 168
+    msg: ParamMixerInv
+  - id: 169
     msg: LogRotError
     send: true
-  - id: 169
+  - id: 170
     msg: LogRateError
     send: true
-  - id: 170
-    msg: LogTransError
   - id: 171
+    msg: LogTransError
+  - id: 172
     msg: EscRpmFeedback
     send: true
   - alias: ActuatorControls
