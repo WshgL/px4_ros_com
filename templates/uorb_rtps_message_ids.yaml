@@ -477,9 +477,9 @@ rtps:
     msg: VehicleAngularAccelerationMocap
   - alias: ParamMotor
     id: 220
-    msg: ParamMotorLog
+    msg: ParamMotorRos
     send: true
   - alias: ParamRotation
     id: 221
-    msg: ParamRotationLog
+    msg: ParamRotationRos
     send: true
