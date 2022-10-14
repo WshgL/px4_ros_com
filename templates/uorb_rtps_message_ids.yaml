@@ -174,7 +174,6 @@ rtps:
     msg: VehicleAirData
   - id: 87
     msg: VehicleAttitude
-    receive: false
   - id: 88
     msg: VehicleAttitudeSetpoint
   - id: 89
@@ -324,9 +323,9 @@ rtps:
     msg: ReferenceTrajectory
   - id: 161
     msg: ReferenceRotationForce
-    receive: true
   - id: 162
     msg: ReferenceVirtualRate
+    receive: true
   - id: 163
     msg: ReferenceTorque
   - id: 164
@@ -343,13 +342,12 @@ rtps:
   - id: 168
     msg: ParamMixerInv
   - id: 169
-    msg: LogRotError
-    send: true
+    msg: LogTransError
   - id: 170
+    msg: LogRotError
+  - id: 171
     msg: LogRateError
     send: true
-  - id: 171
-    msg: LogTransError
   - id: 172
     msg: EscRpmFeedback
     send: true
@@ -468,7 +466,6 @@ rtps:
   - alias: VehicleAttitude
     id: 217
     msg: VehicleAttitudeMocap
-    receive: true
   - alias: VehicleAngularVelocity
     id: 218
     msg: VehicleAngularVelocityMocap
