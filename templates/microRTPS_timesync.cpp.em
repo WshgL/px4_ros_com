@@ -153,8 +153,8 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 		}
 	}
 
-	// ignore if rtti > 50ms
-	if (rtti > 50ll * 1000ll * 1000ll) {
+	// ignore if rtti > 61ms
+	if (rtti > 61ll * 1000ll * 1000ll) {
 		if (_debug) { std::cout << "\033[1;33m[ micrortps__timesync ]\tRTTI too high for timesync: " << rtti / (1000ll * 1000ll) << "ms\033[0m" << std::endl; }
 
 		return false;
