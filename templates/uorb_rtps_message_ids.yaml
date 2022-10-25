@@ -480,3 +480,6 @@ rtps:
     id: 221
     msg: ParamRotationRos
     send: true
+  - alias: ActuatorControls
+    id: 222
+    msg: ActuatorControlsRlse
