@@ -36,3 +36,11 @@ rtps:
   - base: ParamMotor
     msg: ParamMotorRos
     send: true
+  # - msg: VehicleLocalPosition
+  #   send: true
+  # - msg: VehicleAttitude
+  #   send: true
+  # - msg: VehicleAngularVelocity
+  #   send: true
+  # - msg: VehicleAngularAcceleration
+  #   send: true
