@@ -5,6 +5,8 @@ rtps:
   - msg: Timesync
     receive: true
     send: true
+  - msg: TimesyncStatus
+    send: true
   - msg: VehicleCommand
     receive: true
   - msg: VehicleStatus
