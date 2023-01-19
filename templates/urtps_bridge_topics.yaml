@@ -18,7 +18,7 @@ rtps:
   - base: VehicleOdometry
     msg: VehicleVisualOdometry
     receive: true
-  - msg: ReferenceVirtualRate
+  - msg: ReferenceRotationForce
     receive: true
   - msg: ParamRotation
     receive: false
@@ -36,11 +36,11 @@ rtps:
   - base: ParamMotor
     msg: ParamMotorRos
     send: true
-  # - msg: VehicleLocalPosition
-  #   send: true
-  # - msg: VehicleAttitude
-  #   send: true
-  # - msg: VehicleAngularVelocity
-  #   send: true
-  # - msg: VehicleAngularAcceleration
-  #   send: true
+  - msg: VehicleLocalPosition
+    send: true
+  - msg: VehicleAttitude
+    send: true
+  - msg: VehicleAngularVelocity
+    send: true
+  - msg: VehicleAngularAcceleration
+    send: true
