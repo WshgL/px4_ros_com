@@ -26,9 +26,11 @@ rtps:
     receive: true
   - msg: ParamMotor
     receive: false
-  - msg: LogRateError
+  - msg: FeedbackMotorRpm
     send: true
-  - msg: EscRpmFeedback
+  - msg: FeedbackThrustTorque
+    send: true
+  - msg: LogRateError
     send: true
   - base: ParamRotation
     msg: ParamRotationRos
