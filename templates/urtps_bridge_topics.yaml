@@ -32,7 +32,7 @@ rtps:
     send: true
   - msg: LogRateError
     send: true
-  - msg: FaultInjection
+  - msg: ActuatorLoeFault
     receive: true
   - base: ParamRotation
     msg: ParamRotationRos
