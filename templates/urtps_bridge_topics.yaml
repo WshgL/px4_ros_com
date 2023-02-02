@@ -32,6 +32,8 @@ rtps:
     send: true
   - msg: LogRateError
     send: true
+  - msg: FaultInjection
+    receive: true
   - base: ParamRotation
     msg: ParamRotationRos
     send: true
