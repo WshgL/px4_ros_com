@@ -26,6 +26,8 @@ rtps:
     receive: true
   - msg: ParamMotor
     receive: false
+  - msg: DisturbanceAtt
+    receive: true
   - msg: FeedbackMotorRpm
     send: true
   - msg: FeedbackThrustTorque
