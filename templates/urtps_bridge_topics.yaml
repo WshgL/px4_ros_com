@@ -13,6 +13,10 @@ rtps:
     send: true
   - msg: RcChannels
     send: true
+  - msg: VehicleAttitude
+    receive: false
+  - msg: VehicleAngularVelocity
+    receive: false
   - msg: VehicleOdometry
     receive: false
   - base: VehicleOdometry
@@ -29,24 +33,22 @@ rtps:
   - msg: DisturbanceAtt
     receive: true
   - msg: FeedbackMotorRpm
-    send: true
+    receive: true
   - msg: FeedbackThrustTorque
-    send: true
+    receive: true
   - msg: LogRateError
     send: true
   - msg: ActuatorLoeFault
+    receive: true
+  - base: VehicleAttitude
+    msg: VehicleAttitudeMocap
+    receive: true
+  - base: VehicleAngularVelocity
+    msg: VehicleAngularVelocityMocap
     receive: true
   - base: ParamRotation
     msg: ParamRotationRos
     send: true
   - base: ParamMotor
     msg: ParamMotorRos
-    send: true
-  - msg: VehicleLocalPosition
-    send: true
-  - msg: VehicleAttitude
-    send: true
-  - msg: VehicleAngularVelocity
-    send: true
-  - msg: VehicleAngularAcceleration
     send: true
