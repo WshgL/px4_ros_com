@@ -36,6 +36,8 @@ rtps:
     receive: true
   - msg: FeedbackThrustTorque
     receive: true
+  - msg: LogRotError
+    send: true
   - msg: LogRateError
     send: true
   - msg: ActuatorLoeFault
