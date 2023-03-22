@@ -13,6 +13,10 @@ rtps:
     send: true
   - msg: RcChannels
     send: true
+  - msg: VehicleAttitude
+    receive: false
+  - msg: VehicleAngularVelocity
+    receive: false
   - msg: VehicleOdometry
     receive: false
   - base: VehicleOdometry
@@ -39,29 +43,15 @@ rtps:
     send: true
   - msg: ActuatorLoeFault
     receive: true
+  - base: VehicleAttitude
+    msg: VehicleAttitudeMocap
+    receive: true
+  - base: VehicleAngularVelocity
+    msg: VehicleAngularVelocityMocap
+    receive: true
   - base: ParamRotation
     msg: ParamRotationRos
     send: true
   - base: ParamMotor
     msg: ParamMotorRos
     send: true
-############# simulation #############
-  - msg: VehicleLocalPosition
-    send: true
-  - msg: VehicleAttitude
-    send: true
-  - msg: VehicleAngularVelocity
-    send: true
-  - msg: VehicleAngularAcceleration
-    send: true
-############# experiment #############
-  # - msg: VehicleAttitude
-  #   receive: false
-  # - msg: VehicleAngularVelocity
-  #   receive: false
-  # - base: VehicleAttitude
-  #   msg: VehicleAttitudeMocap
-  #   receive: true
-  # - base: VehicleAngularVelocity
-  #   msg: VehicleAngularVelocityMocap
-  #   receive: true
