@@ -19,10 +19,10 @@ class OffboardControl(Node):
     def __init__(self):
         super().__init__('OffboardControl')
         self.offboard_control_mode_publisher_ = self.create_publisher(OffboardControlMode,
-                                                                        "/fmu/in/offboard_control_mode", 10)
+                                                                        "/fmu/in/OffboardControlMode", 10)
         self.trajectory_setpoint_publisher_ = self.create_publisher(TrajectorySetpoint,
-                                                                    "/fmu/in/trajectory_setpoint", 10)
-        self.vehicle_command_publisher_ = self.create_publisher(VehicleCommand, "/fmu/in/vehicle_command", 10)
+                                                                    "/fmu/in/TrajectorySetpoint", 10)
+        self.vehicle_command_publisher_ = self.create_publisher(VehicleCommand, "/fmu/in/VehicleCommand", 10)
 
         self.offboard_setpoint_counter_ = 0
 
