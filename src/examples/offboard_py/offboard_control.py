@@ -78,7 +78,9 @@ class OffboardControl(Node):
     def publish_trajectory_setpoint(self):
         msg = TrajectorySetpoint()
         msg.timestamp = self.timestamp_
-        msg.position = [0.0, 0.0, -5.0] 
+        msg.x = 0.0
+        msg.y = 0.0
+        msg.z = -5.0
         msg.yaw = -3.14  # [-PI:PI]
         msg.timestamp = int(Clock().now().nanoseconds / 1000) # time in microseconds
         self.trajectory_setpoint_publisher_.publish(msg)
