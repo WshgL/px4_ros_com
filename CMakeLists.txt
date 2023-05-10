@@ -68,7 +68,8 @@ install(TARGETS offboard_control DESTINATION lib/${PROJECT_NAME})
 # Export information to downstream packages
 ament_export_dependencies(ament_cmake rclcpp rosidl_default_runtime eigen3_cmake_module Eigen3 px4_msgs geometry_msgs sensor_msgs)
 
-ament_export_targets(export_frame_transforms HAS_LIBRARY_TARGET)
+ament_export_interfaces(export_frame_transforms HAS_LIBRARY_TARGET) # dashing
+# ament_export_targets(export_frame_transforms HAS_LIBRARY_TARGET) # foxy
 
 ament_export_include_directories(include)
 ament_export_libraries(frame_transforms)
