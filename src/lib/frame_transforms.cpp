@@ -70,8 +70,32 @@ Eigen::Quaterniond quaternion_from_euler(const double roll, const double pitch, 
 
 Eigen::Vector3d quaternion_to_euler(const Eigen::Quaterniond &q)
 {
-	// YPR is ZYX axes
-	return q.toRotationMatrix().eulerAngles(2, 1, 0).reverse();
+    Eigen::Vector3d euler;
+
+    // Compute Pitch (Y-axis rotation)
+    double sinp = 2 * (q.w() * q.y() - q.z() * q.x());
+    if (std::fabs(sinp) >= 1)
+        euler(1) = std::copysign(M_PI / 2, sinp); // Use 90 degrees or -90 degrees
+    else
+        euler(1) = std::asin(sinp);
+
+    // Compute Yaw (Z-axis rotation)
+    double siny_cosp = 2 * (q.w() * q.z() + q.x() * q.y());
+    double cosy_cosp = 1 - 2 * (q.y() * q.y() + q.z() * q.z());
+    euler(2) = std::atan2(siny_cosp, cosy_cosp);
+
+    // Compute Roll (X-axis rotation)
+    double sinr_cosp = 2 * (q.w() * q.x() + q.y() * q.z());
+    double cosr_cosp = 1 - 2 * (q.x() * q.x() + q.y() * q.y());
+    euler(0) = std::atan2(sinr_cosp, cosr_cosp);
+
+    // Normalize the angles to the range [-pi, pi]
+    for (int i = 0; i < 3; ++i) {
+        while (euler(i) > M_PI) euler(i) -= 2 * M_PI;
+        while (euler(i) < -M_PI) euler(i) += 2 * M_PI;
+    }
+
+    return euler;
 }
 
 void quaternion_to_euler(const Eigen::Quaterniond &q, double &roll, double &pitch, double &yaw)
