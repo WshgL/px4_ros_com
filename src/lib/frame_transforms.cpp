@@ -38,7 +38,7 @@
  * Adapted from MAVROS ftf_frame_conversions.cpp and ftf_quaternion_utils.cpp.
  */
 
-#include <px4_ros_com/frame_transforms.h>
+#include <px4_ros_com/frame_transforms.hpp>
 
 #include <assert.h>
 
@@ -76,10 +76,32 @@ Eigen::Vector3d quaternion_to_euler(const Eigen::Quaterniond &q)
 
 void quaternion_to_euler(const Eigen::Quaterniond &q, double &roll, double &pitch, double &yaw)
 {
-	const auto euler = quaternion_to_euler(q);
-	roll = euler.x();
-	pitch = euler.y();
-	yaw = euler.z();
+    // Compute Pitch (Y-axis rotation)
+    double sinp = 2 * (q.w() * q.y() - q.z() * q.x());
+    if (std::fabs(sinp) >= 1)
+        pitch = std::copysign(M_PI / 2, sinp); // Use 90 degrees or -90 degrees
+    else
+        pitch = std::asin(sinp);
+
+    // Compute Yaw (Z-axis rotation)
+    double siny_cosp = 2 * (q.w() * q.z() + q.x() * q.y());
+    double cosy_cosp = 1 - 2 * (q.y() * q.y() + q.z() * q.z());
+    yaw = std::atan2(siny_cosp, cosy_cosp);
+
+    // Compute Roll (X-axis rotation)
+    double sinr_cosp = 2 * (q.w() * q.x() + q.y() * q.z());
+    double cosr_cosp = 1 - 2 * (q.x() * q.x() + q.y() * q.y());
+    roll = std::atan2(sinr_cosp, cosr_cosp);
+
+    // Normalize the angles to the range [-pi, pi]
+    while (roll > M_PI) roll -= 2 * M_PI;
+    while (roll < -M_PI) roll += 2 * M_PI;
+
+    while (pitch > M_PI) pitch -= 2 * M_PI;
+    while (pitch < -M_PI) pitch += 2 * M_PI;
+
+    while (yaw > M_PI) yaw -= 2 * M_PI;
+    while (yaw < -M_PI) yaw += 2 * M_PI;
 }
 
 void eigen_quat_to_array(const Eigen::Quaterniond &q, std::array<float, 4> &qarray)
